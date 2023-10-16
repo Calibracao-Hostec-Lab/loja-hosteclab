@@ -1,38 +1,54 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #3D8A86;
+}
+
+.title {
+  text-align: center;
+  width: 10em;
+  margin: 15px auto;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #ddd;
+}
+
+/* Card Styles */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  row-gap: 20px;
+}
+
+.card {
+  background-color: #ddd;
+  border-radius: 15px;
+  border: 1px solid black;
+  transition: 0.2s;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card:hover {
+  transform: scale(1.05);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cardtitle{
+  font-size: larger;
+  line-height: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cardbutton {
+  font-size: large;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardimg {
+  margin: 15px 15px 0 15px;
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
