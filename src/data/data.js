@@ -1,4 +1,4 @@
-const Data = [
+const equipamentos = [
   {
     id: 1,
     name: "Incubadora de CO2",
@@ -31,7 +31,7 @@ const Data = [
   },
   {
     id: 7,
-    name: "CSB",
+    name: "Cabine de Segurança Biológica",
     img: "Cabine de Segurança Biológica/1.jpg",
   },
   {
@@ -66,4 +66,4 @@ const Data = [
   },
 ];
 
-export default Data;
+export default equipamentos;
