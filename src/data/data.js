@@ -1,7 +1,7 @@
 const equipamentos = [
   {
     id: 1,
-    name: "Incubadora de CO2",
+    name: "Incubadora de CO²",
     img: "Incubadora de CO2/1.jpg",
   },
   {
@@ -63,6 +63,21 @@ const equipamentos = [
     id: 13,
     name: "Liofilizador",
     img: "Liofilizador/1.jpg",
+  },
+  {
+    id: 14,
+    name: "Banho Maria",
+    img: "Banho Maria/6.jpg",
+  },
+  {
+    id: 15,
+    name: "Rack e Canister para Tanque de Nitrogênio",
+    img: "Rack e Canister/1.jpg",
+  },
+  {
+    id: 16,
+    name: "Filtro para Incubadora de CO²",
+    img: "Filtros/1.jpg",
   },
 ];
 
