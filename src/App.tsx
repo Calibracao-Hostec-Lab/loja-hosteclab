@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
+
 import "./App.css";
-import equipamentos from "./data/data.js";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
-import { useEffect, useState } from "react";
+import equipamentos from "./data/data.js";
 
 function App() {
   type Equipamento = {
