@@ -56,6 +56,7 @@ function Card({ name, img }: { name: string; img: string }): JSX.Element {
         startIcon={<SmartphoneOutlinedIcon />}
         variant="contained"
         href={`https://wa.me/5511976478132?text=Ol%C3%A1%2C+gostaria+de+fazer+o+or%C3%A7amento+de%3A+${name}`}
+        target="_blank"
       >
         Orçamento via WhatsApp
       </Button>
