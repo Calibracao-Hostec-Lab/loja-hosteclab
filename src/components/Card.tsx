@@ -1,10 +1,3 @@
-/**
- * Renders a card component.
- * @param name - The name of the card.
- * @param img - The image source of the card.
- * @returns The rendered card component.
- */
-
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SmartphoneOutlinedIcon from "@mui/icons-material/SmartphoneOutlined";
 import Button from "@mui/material/Button";
@@ -42,6 +35,8 @@ function Card({ name, img }: { name: string; img: string }): JSX.Element {
           bgcolor: "#bbb",
           color: "black",
           width: "full",
+          ":hover": { backgroundColor: "#0000bb", color: "white" },
+          transitionDuration: "200ms",
         }}
         size="medium"
         startIcon={<MailOutlineIcon />}
@@ -51,7 +46,13 @@ function Card({ name, img }: { name: string; img: string }): JSX.Element {
         Solicitar o orçamento
       </Button>
       <Button
-        sx={{ mt: 1, bgcolor: "#bbb", color: "black" }}
+        sx={{
+          mt: 1,
+          bgcolor: "#bbb",
+          color: "black",
+          ":hover": { backgroundColor: "#007500", color: "white" },
+          transitionDuration: "200ms",
+        }}
         size="medium"
         startIcon={<SmartphoneOutlinedIcon />}
         variant="contained"
