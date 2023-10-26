@@ -1,108 +1,65 @@
-import * as React from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+
 import Logo from "../images/Logo/Logo Hostec Lab.svg";
 
-const drawerWidth = 240;
-const navItems = [{ name: "Painel", link: "https://painel.hosteclab.com" }];
-
-export default function Navbar(props: any) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Hostec Lab
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.name} disablePadding>
-            <ListItemButton href={item.link} sx={{ textAlign: "center" }}>
-              <ListItemText primary={item.name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
+export default function Navbar({ id }: { id: string }) {
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar id={props.id} sx={{ bgcolor: "#555" }} component="nav">
-        <Toolbar>
+      <AppBar
+        id={id}
+        sx={{ bgcolor: "#00273a", borderRadius: "0 0 8px 8px" }}
+        component="nav"
+      >
+        <Toolbar className="flex justify-between">
           <IconButton
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            href="https://painel.hosteclab.com"
+            sx={{
+              backgroundColor: "#bbb",
+              ":hover": { backgroundColor: "#757575" },
+              transitionDuration: "200ms",
+              color: "black",
+              marginRight: { sm: "172px" },
+            }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
+            className="hidden sm:flex flex-col flex-wrap text-center"
             variant="h6"
             component="h1"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ fontSize: { xs: "0.7rem", sm: "1rem", lg: "1.25rem" } }}
           >
             <Box
               component="img"
-              alt="logo"
+              alt="Hostec Lab"
               src={Logo}
-              sx={{ height: "64px" }}
+              className="mt-1 h-[60px]"
             />
+            "Superar a expectativa do cliente é nossa meta"
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item.name}
-                href={item.link}
-                sx={{ color: "#fff", bgcolor: "black" }}
-              >
-                {item.name}
-              </Button>
-            ))}
+          <Box className="flex sm:w-[212px]">
+            <Button
+              sx={{
+                color: "#fff",
+                bgcolor: "#9c001f",
+                ":hover": { backgroundColor: "#750000" },
+                transitionDuration: "200ms",
+                fontSize: { xs: "0.7rem", sm: "0.8rem", lg: "0.875rem" },
+              }}
+              href="https://wa.me/5511976478132"
+              target="_blank"
+            >
+              Fale com um consultor
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
     </Box>
   );
 }
