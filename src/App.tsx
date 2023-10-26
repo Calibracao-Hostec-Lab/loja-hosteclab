@@ -15,10 +15,16 @@ function App() {
   const [bodyMT, setBodyMT] = useState("");
 
   useEffect(() => {
-    const navbarHeight = document.getElementById("navbar")?.clientHeight;
-    if (navbarHeight) {
-      setBodyMT(navbarHeight + 10 + "px");
+    function handleResize() {
+      let navbarHeight = document.getElementById("navbar")?.clientHeight;
+      if (navbarHeight) {
+        setBodyMT(navbarHeight + 10 + "px");
+      }
     }
+
+    handleResize();
+
+    window.addEventListener("resize", () => handleResize());
   }, []);
 
   return (
@@ -26,7 +32,7 @@ function App() {
       <Navbar id="navbar" />
       <div
         style={{ marginTop: bodyMT }}
-        className="justify-items-center grid md:grid-cols-4 grid-cols-2 gap-x-10 gap-y-5 mx-5"
+        className="justify-items-center grid cols5:grid-cols-5 cols4:grid-cols-4 cols3:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5 mx-5"
       >
         {equipamentos.map((item: Equipamento) => (
           <Card key={item.id} name={item.name} img={item.img} />
