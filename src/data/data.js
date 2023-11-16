@@ -42,7 +42,7 @@ const equipamentos = [
   {
     id: 9,
     name: "Centrífuga Refrigerada",
-    img: "Centrífuga Refrigerada/1.jpg",
+    img: "Centrífuga Refrigerada/5.jpg",
   },
   {
     id: 10,
@@ -77,7 +77,27 @@ const equipamentos = [
   {
     id: 16,
     name: "Filtro para Incubadora de CO²",
-    img: "Filtros/1.jpg",
+    img: "Filtro para Incubadora de CO²/1.jpg",
+  },
+  {
+    id: 17,
+    name: "Termômetro",
+    img: "Termômetro/1.jpg",
+  },
+  {
+    id: 18,
+    name: "Termociclador Automático",
+    img: "Termociclador Automático/1.jpg",
+  },
+  {
+    id: 19,
+    name: "Racks para Freezer",
+    img: "Racks para Freezer/1.jpg",
+  },
+  {
+    id: 20,
+    name: "Filtros para Fluxo Laminar, Segurança Biológica e Capelas de Exaustão",
+    img: "Filtros para Fluxo Laminar, Segurança Biológica e Capelas de Exaustão/1.jpg",
   },
 ];
 
