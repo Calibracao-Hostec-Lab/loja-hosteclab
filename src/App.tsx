@@ -10,15 +10,16 @@ function App() {
     id: number;
     name: string;
     img: string;
+    link: string;
   };
 
-  const [bodyMT, setBodyMT] = useState("");
+  const [bodyMarginTop, setBodyMarginTop] = useState("");
 
   useEffect(() => {
     function handleResize() {
       let navbarHeight = document.getElementById("navbar")?.clientHeight;
       if (navbarHeight) {
-        setBodyMT(navbarHeight + 10 + "px");
+        setBodyMarginTop(navbarHeight + 10 + "px");
       }
     }
 
@@ -31,11 +32,11 @@ function App() {
     <>
       <Navbar id="navbar" />
       <div
-        style={{ marginTop: bodyMT }}
+        style={{ marginTop: bodyMarginTop }}
         className="justify-items-center grid cols5:grid-cols-5 cols4:grid-cols-4 cols3:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5 mx-5"
       >
-        {equipamentos.map((item: Equipamento) => (
-          <Card key={item.id} name={item.name} img={item.img} />
+        {equipamentos.map(({id, name, img, link}: Equipamento) => (
+          <Card key={id} name={name} img={img} link={link} />
         ))}
       </div>
     </>

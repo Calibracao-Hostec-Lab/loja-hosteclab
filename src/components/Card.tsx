@@ -1,17 +1,23 @@
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SmartphoneOutlinedIcon from "@mui/icons-material/SmartphoneOutlined";
+import { CardActionArea } from "@mui/material";
 import Button from "@mui/material/Button";
 import CardMui from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 
-function Card({ name, img }: { name: string; img: string }): JSX.Element {
+interface CardProps {
+  name: string;
+  img: string;
+  link: string;
+}
+
+function Card({ name, img, link }: CardProps) {
   return (
     <div className="grid justify-items-center max-w-[278px]">
       <CardMui>
-        <CardActionArea /* href="/" */>
+        <CardActionArea href={link}>
           <CardMedia
             sx={{ objectFit: "cover", aspectRatio: "1 / 1" }}
             component="img"
