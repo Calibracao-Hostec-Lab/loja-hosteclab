@@ -16,10 +16,10 @@ interface CardProps {
 function Card({ name, img, link }: CardProps) {
   return (
     <div className="grid justify-items-center max-w-[278px]">
-      <CardMui>
+      <CardMui sx={{ transition: "300ms", "&:hover": { scale: "1.035" } }}>
         <CardActionArea href={link}>
           <CardMedia
-            sx={{ objectFit: "cover", aspectRatio: "1 / 1" }}
+            className="aspect-square"
             component="img"
             width={"240"}
             image={require(`../images/${img}`)}
